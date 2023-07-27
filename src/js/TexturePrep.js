@@ -4,7 +4,7 @@ export class TexturePrep{
     /**
      * @constructor
      * @param {string|object} textureReference - The target image represented as a string or object.
-     * @param {number} [maxWidth=2000] - The maximum width to which a texture can be resized.
+     * @param {number} [maxWidth=1800] - The maximum width to which a texture can be resized.
      * @param {number} [maxHeight=1300] - The maximum height to which a texture can be resized.
      */
     constructor(textureReference, maxWidth = 1800, maxHeight = 1300) { // default values are set here, can be overridden
