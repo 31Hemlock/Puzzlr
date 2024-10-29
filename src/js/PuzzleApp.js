@@ -334,7 +334,7 @@ export class PuzzleApp {
                 (Math.random() * 5 + 0.12) * 0.1,
                 0.7
             );
-            sizes.push(Math.random() * scale + 5);  // Random size between 5 and 20
+            sizes.push(Math.random() * scale + 2.5); 
             alphas.push(1); // Initial alpha value
             fadeIns[i / 3] = 0; // 0 for false
 
@@ -346,7 +346,7 @@ export class PuzzleApp {
         geometry.setAttribute('fadeIn', new THREE.BufferAttribute(fadeIns, 1));
 
 
-        this.textureLoader.load('/images/snowflake.png', (snowflakeTexture) => {
+        this.textureLoader.load('/images/snowflakeSmall.png', (snowflakeTexture) => {
 
             let vertexShader = `
             attribute float alpha;

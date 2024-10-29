@@ -1,5 +1,5 @@
 node_modules
 ideas
 .vscode
-static
 public
+dist

@@ -7,11 +7,15 @@ export class ControlMenu {
      * @constructor
      */
     constructor() {
-        this.toggleControls = document.getElementById('toggleControls')
+        this.openControlsButton = document.getElementById('openControls')
+        this.closeControlsButton = document.getElementById('closeControls')
         this.controls = document.getElementById('controls')
         this.appearanceState = true
-        this.toggleControls.addEventListener('click', () => {
-            this.toggle()
+        this.openControlsButton.addEventListener('click', () => {
+            this.openControls()
+        })
+        this.closeControlsButton.addEventListener('click', () => {
+            this.closeControls()
         })
 
         // this.init()
@@ -31,6 +35,26 @@ export class ControlMenu {
             this.close()
             this.appearanceState = false
         }
+    }
+    /**
+     * Opens the controls menu.
+     * 
+     * @method
+     * @return {void}
+     */
+    openControls() {
+        this.appearanceState = true;
+        this.open();
+    }
+    /**
+     * Closes the controls menu.
+     * 
+     * @method
+     * @return {void}
+     */
+    closeControls() {
+        this.appearanceState = false;
+        this.close();
     }
 
     /**
@@ -52,8 +76,6 @@ export class ControlMenu {
     open() {
         this.appearanceState = true
         this.controls.classList.add('controls-open');
-        this.toggleControls.innerHTML = "Click to hide"
-
     }
 
     /**
@@ -65,8 +87,6 @@ export class ControlMenu {
     close() {
         this.appearanceState = false
         this.controls.classList.remove('controls-open');
-        this.toggleControls.innerHTML = "<< Controls >>"
-
     }
 
     /**
