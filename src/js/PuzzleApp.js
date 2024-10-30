@@ -1646,10 +1646,10 @@ export class PuzzleApp {
           }
         if (event.target.classList.contains("chosen-image")) {
             if (event.target.classList.contains("geography")) {
-            // if (event.target.src == 'http://192.168.1.165:8080/assets/images/cd7b19abb5e64293.png') {
-                if (event.target.src == "http://192.168.1.165:8080/assets/images/5055beaafc96e7f1.png"){
+            // if (event.target.src == window.location.origin + '/assets/images/cd7b19abb5e64293.png') {
+                if (event.target.src == window.location.origin + "/assets/images/5055beaafc96e7f1.png"){
                     this.makeNewPuzzle("./geography/img/northAmerica.png", "./geography/svg/northAmerica.svg")
-            } else if (event.target.src == "http://192.168.1.165:8080/assets/images/c9ad9d4270a10439.png") {
+            } else if (event.target.src == window.location.origin + "/assets/images/c9ad9d4270a10439.png") {
                 this.makeNewPuzzle("./geography/img/southAmerica.png", "./geography/svg/southAmerica.svg")
             }
         } else {

@@ -23,7 +23,9 @@ module.exports = {
             template: path.resolve(__dirname, '../src/index.html'),
             minify: true
         }),
-        new MiniCSSExtractPlugin()
+        new MiniCSSExtractPlugin({
+            filename: '[name].[contenthash].css'
+        })
     ],
     module:
     {
