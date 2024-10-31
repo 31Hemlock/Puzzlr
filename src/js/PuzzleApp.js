@@ -110,7 +110,7 @@ export class PuzzleApp {
         this.cameraZone = [200, 4600]
         this.perspective = 1
         this.numPuzzles = 0
-        this.artSvg = ["/artSvg/maincornFlipped.svg", "/artSvg/boxes.svg"]
+        this.artSvg = ["artSvg/maincornFlipped.svg", "artSvg/boxes.svg"]
         this.pieceAmounts = [10, 25, 50, 100]
         this.startTime = performance.now()
         this.sounds = []
@@ -154,7 +154,7 @@ export class PuzzleApp {
         const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture})
         // Texture loader
         const dracoLoader = new DRACOLoader(manager);
-        dracoLoader.setDecoderPath('/draco/');
+        dracoLoader.setDecoderPath('draco/');
         this.loader = new GLTFLoader(manager);
         this.loader.setDRACOLoader(dracoLoader);
 
@@ -173,7 +173,7 @@ export class PuzzleApp {
         })
 
         // Load the background image
-        this.textureLoader.load('/images/outside2.png', (backgroundTexture) => {
+        this.textureLoader.load('images/outside2.png', (backgroundTexture) => {
             let backgroundGeometry = new THREE.PlaneGeometry(11000, 11000);
             let backgroundMaterial = new THREE.MeshBasicMaterial({ map: backgroundTexture});
             let backgroundMesh = new THREE.Mesh(backgroundGeometry, backgroundMaterial)
@@ -346,7 +346,7 @@ export class PuzzleApp {
         geometry.setAttribute('fadeIn', new THREE.BufferAttribute(fadeIns, 1));
 
 
-        this.textureLoader.load('/images/snowflakeSmall.png', (snowflakeTexture) => {
+        this.textureLoader.load('images/snowflakeSmall.png', (snowflakeTexture) => {
 
             let vertexShader = `
             attribute float alpha;
@@ -1647,9 +1647,9 @@ export class PuzzleApp {
         if (event.target.classList.contains("chosen-image")) {
             if (event.target.classList.contains("geography")) {
             // if (event.target.src == window.location.origin + '/assets/images/cd7b19abb5e64293.png') {
-                if (event.target.src == window.location.origin + "/assets/images/5055beaafc96e7f1.png"){
+                if (event.target.src == window.location.origin + "assets/images/5055beaafc96e7f1.png"){
                     this.makeNewPuzzle("./geography/img/northAmerica.png", "./geography/svg/northAmerica.svg")
-            } else if (event.target.src == window.location.origin + "/assets/images/c9ad9d4270a10439.png") {
+            } else if (event.target.src == window.location.origin + "assets/images/c9ad9d4270a10439.png") {
                 this.makeNewPuzzle("./geography/img/southAmerica.png", "./geography/svg/southAmerica.svg")
             }
         } else {
