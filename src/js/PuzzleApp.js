@@ -1648,8 +1648,12 @@ export class PuzzleApp {
             if (event.target.classList.contains("geography")) {
                 const baseUrl = window.location.origin + window.location.pathname.replace(/\/$/, ""); // Ensures we include /Puzzlr if hosted on GitHub Page
                 if (event.target.src === `${baseUrl}/assets/images/5055beaafc96e7f1.png`) {
+                    console.log(`${baseUrl}/geography/img/northAmerica.png`)
+                    console.log(`${baseUrl}/geography/svg/northAmerica.svg`)
                     this.makeNewPuzzle(`${baseUrl}/geography/img/northAmerica.png`, `${baseUrl}/geography/svg/northAmerica.svg`);
                   } else if (event.target.src === `${baseUrl}/assets/images/c9ad9d4270a10439.png`) {
+                    console.log(`${baseUrl}/geography/img/southAmerica.png`)
+                    console.log(`${baseUrl}/geography/svg/southAmerica.svg`)
                     this.makeNewPuzzle(`${baseUrl}/geography/img/southAmerica.png`, `${baseUrl}/geography/svg/southAmerica.svg`);
                   }
                 } else {
