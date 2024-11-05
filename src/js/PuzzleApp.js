@@ -1646,11 +1646,10 @@ export class PuzzleApp {
           }
         if (event.target.classList.contains("chosen-image")) {
             if (event.target.classList.contains("geography")) {
-                console.log("Geography")
                 if (event.target.src == window.location.origin + "/assets/images/5055beaafc96e7f1.png"){
-                    this.makeNewPuzzle("./geography/img/northAmerica.png", "./geography/svg/northAmerica.svg")
+                    this.makeNewPuzzle("/geography/img/northAmerica.png", "/geography/svg/northAmerica.svg")
             } else if (event.target.src == window.location.origin + "/assets/images/c9ad9d4270a10439.png") {
-                this.makeNewPuzzle("./geography/img/southAmerica.png", "./geography/svg/southAmerica.svg")
+                this.makeNewPuzzle("/geography/img/southAmerica.png", "/geography/svg/southAmerica.svg")
             }
         } else {
             let fullSizeSrc = event.target.src.replace("previewMenuImages", "menuImages")
