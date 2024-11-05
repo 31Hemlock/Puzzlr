@@ -1646,18 +1646,16 @@ export class PuzzleApp {
           }
         if (event.target.classList.contains("chosen-image")) {
             if (event.target.classList.contains("geography")) {
-                if (event.target.src == window.location.origin + "/assets/images/5055beaafc96e7f1.png"){
-                    this.makeNewPuzzle("/geography/img/northAmerica.png", "/geography/svg/northAmerica.svg")
-            } else if (event.target.src == window.location.origin + "/assets/images/c9ad9d4270a10439.png") {
-                this.makeNewPuzzle("/geography/img/southAmerica.png", "/geography/svg/southAmerica.svg")
+                const baseUrl = window.location.origin + window.location.pathname.replace(/\/$/, ""); // Ensures we include /Puzzlr if hosted on GitHub Page
+                if (event.target.src === `${baseUrl}/assets/images/5055beaafc96e7f1.png`) {
+                    this.makeNewPuzzle(`${baseUrl}/geography/img/northAmerica.png`, `${baseUrl}/geography/svg/northAmerica.svg`);
+                  } else if (event.target.src === `${baseUrl}/assets/images/c9ad9d4270a10439.png`) {
+                    this.makeNewPuzzle(`${baseUrl}/geography/img/southAmerica.png`, `${baseUrl}/geography/svg/southAmerica.svg`);
+                  }
+                } else {
+                let fullSizeSrc = event.target.src.replace("previewMenuImages", "menuImages")
+                this.makeNewPuzzle(fullSizeSrc)
             }
-        } else {
-            let fullSizeSrc = event.target.src.replace("previewMenuImages", "menuImages")
-            this.makeNewPuzzle(fullSizeSrc)
-
-        }
-
-   
         }
     }
 
